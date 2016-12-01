@@ -55,7 +55,7 @@ defmodule InfoSys do
         do_await_results(tail, results ++ acc, timeout)
       {:DOWN, ^monitor_ref, :process, ^pid, _reason} ->
         do_await_results(tail, acc, timeout)
-      :timeout ->
+      :timedout ->
         kill(pid, monitor_ref)
         do_await_results(tail, acc, 0)
     after timeout ->
