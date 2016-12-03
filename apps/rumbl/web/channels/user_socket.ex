@@ -16,5 +16,9 @@ defmodule Rumbl.UserSocket do
     end
   end
 
+  def connect(_opts, _socket) do
+    :error
+  end
+
   def id(_socket), do: nil
 end
